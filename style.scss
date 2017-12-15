@@ -1,0 +1,60 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+$font-stack: "Trebuchet MS", Arial, Helvetica, sans-serif;
+
+#game {
+  margin-top: 10px;
+  font-family: $font-stack;
+
+  #start {
+    margin-left: 20px;
+  }
+
+  #clear {
+    margin-right: 20px;
+  }
+
+  #gameGeneration,
+  #gameName {
+    font-weight: bold;
+    font-size: 20px;
+    @include border-radius(5px);
+  }
+
+  table {
+    margin: 0 auto;
+    width: 545px;
+    height: 545px;
+    @extend td;
+
+    td {
+      border: 1px solid #ccc;
+    }
+  }
+
+  p {
+    font-weight: bold;
+    font-size: 16px;
+    border: 5px solid #ccc;
+    @include border-radius(5px);
+  }
+
+  .buttons {
+    font-size: 16px;
+    margin: 2px;
+    @include border-radius(5px);
+  }
+
+  .buttons:focus {
+    background-color: blue;
+  }
+
+  #gameSize,
+  #gameSpeed {
+    margin-top: 250px;
+  }
+}
